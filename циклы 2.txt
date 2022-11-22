@@ -1,0 +1,27 @@
+using System;
+namespace _2
+{
+    class Program
+    {
+        static void Main()
+        {
+            int number = int.Parse(Console.ReadLine());
+            int count = 0;
+            while (number > 1)
+            {
+                if ((number % 2) == 0)
+                {
+                    number /= 2;
+                    count++;
+                }
+                else
+                {
+
+                    number = number * 3 + 1;
+                    count++;
+                }
+            }
+            Console.Write($"Количество необходимых действий над числом - {count}");
+        }
+    }
+}
