@@ -1,0 +1,25 @@
+using System;
+namespace _1
+{
+    class Program
+    {
+        static void Main()
+            {
+                Console.Write("Введите число: ");
+                int nums = Convert.ToInt32(Console.ReadLine());
+                Factorize(nums);
+            }
+
+            static void Factorize(int nums)
+            {
+                for (int i = 1; i < nums; i++)
+                {
+                    int a = nums / i;
+                    if (nums % i == 0 && i <= a)
+                    {
+                        Console.WriteLine($"{i} * {a} = {nums}");
+                    }
+                }
+            }
+    }
+}

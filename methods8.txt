@@ -1,0 +1,22 @@
+using System;
+namespace _8
+{
+    class Program
+    {        static void Main()
+        {
+            Console.Write("Кол-во символов = ");
+            int amount = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите символ: ");
+            char symbol = Convert.ToChar(Console.ReadLine());
+            Print(amount, symbol);
+        }
+
+        public static void Print(int amount, char symbol)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                Console.Write(symbol + "\t");
+            }
+        }
+    }
+}
