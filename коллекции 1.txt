@@ -1,0 +1,17 @@
+using System;
+namespace _1
+{
+    class Program
+    {
+        public static void Main()
+        {
+            List<string> task = new List<string> { "Q", "Q", "O", "Q", "Q", "Q", "Q", "Q", "Q", "Q", "Q", "Q", "Q", "Q", "Q" };
+            for (var i = 0; i < task.Count; i++)
+            {
+                if (task[i] == "O")
+                    Console.WriteLine($"Индекс искомого символа - {i}");
+
+            }
+        }
+    }
+}

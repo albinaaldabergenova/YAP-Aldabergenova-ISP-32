@@ -1,0 +1,24 @@
+using System;
+namespace _1
+{
+    class Program
+    {
+        public static void Main()
+        {
+            int a = 0;
+            int b = 1;
+            int c = 0;
+            int d = 1;
+            Console.WriteLine("Введите первое предложение:");
+            List<string> execution = Console.ReadLine().Split(' ').ToList();
+            execution[a] = execution[a].Trim(',');
+            execution[b] = execution[b] + ",";
+            Console.WriteLine(string.Join(" ", execution));
+            Console.WriteLine("Введите второе предложение:");
+            List<string> rest = Console.ReadLine().Split(' ').ToList();
+            rest[c] = rest[c].Trim(',');
+            rest[d] = rest[d] + ",";
+            Console.Write(string.Join(" ", rest));
+        }
+    }
+}

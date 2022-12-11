@@ -1,0 +1,25 @@
+using System;
+namespace _1
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Console.Write("Кол-во значений = ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            GetList(n);
+        }
+        public static void GetList(int n)
+        {
+            var nums = new List<int>();
+            Random randomizer = new Random();
+            for (int i = 0; i < n; i++)
+            {
+                nums.Add(randomizer.Next(0, 999));
+            }
+            Console.WriteLine(string.Join(", ", nums));
+
+        }
+
+    }
+}
