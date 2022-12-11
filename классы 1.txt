@@ -1,0 +1,41 @@
+using System;
+using System.Xml.Linq;
+
+namespace _1
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Worker worker = new Worker();
+            Console.Write("Фамилия сотрудника: ");
+            worker.surname = Console.ReadLine();
+            Console.Write("Имя сотрудника: ");
+            worker.name = Console.ReadLine();
+            Console.Write("Ставка за день работы: ");
+            worker.rate = int.Parse(Console.ReadLine());
+            Console.Write("Кол-во отработанных дней: ");
+            worker.days = char.Parse(Console.ReadLine());
+            worker.GetFullName();
+            worker.GetSalary();
+        }
+        class Worker
+        {
+            public string name;
+            public string surname;
+            public int rate;
+            public char days;
+            public void GetFullName()
+            {
+                Console.WriteLine($"ФИ: {surname} {name}");
+            }
+            public void GetSalary()
+            {
+                int salary = rate * days;
+                Console.WriteLine($"Заработная плата сотрудника = {salary}");
+
+            }
+        }
+
+    }
+}
