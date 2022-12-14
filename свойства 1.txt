@@ -1,0 +1,28 @@
+using System;
+using System.Xml.Linq;
+
+namespace _1
+{
+    class Program
+    {
+        public static void Main()
+        {
+            var tree1 = new Tree("сосна", -6);
+            var tree2 = new Tree("береза", 80);
+            Console.WriteLine($"\"{tree1.name}\", {tree1.something}");
+            Console.WriteLine($"\"{tree2.name}\", {tree2.something}");
+        }
+        class Tree{
+            public string name;
+            public int something;
+            public Tree(string treesName, int num)
+            {
+                name = treesName;
+                something = num;
+            }
+
+
+        }
+
+    }
+}
