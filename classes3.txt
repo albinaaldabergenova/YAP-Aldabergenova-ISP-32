@@ -1,0 +1,58 @@
+using System;
+using System.Xml.Linq;
+
+namespace _1
+{
+    class Program
+    {
+        public static void Main()
+        {
+            XYZ t = new XYZ();
+            Console.WriteLine("Координаты мухи: ");
+            Console.Write("\tx = ");
+            t.Xa = double.Parse(Console.ReadLine());
+            Console.Write("\ty = ");
+            t.Ya = double.Parse(Console.ReadLine());
+            Console.Write("\tz = ");
+            t.Za = double.Parse(Console.ReadLine());
+            Console.WriteLine("Координаты паука: ");
+            Console.Write("\tx = ");
+            t.Xb = double.Parse(Console.ReadLine());
+            Console.Write("\ty = ");
+            t.Yb = double.Parse(Console.ReadLine());
+            Console.Write("\tz = ");
+            t.Zb = double.Parse(Console.ReadLine());
+            if (t.Ya == 0)
+            {
+                t.onPlane();
+                t.inSpace();
+            }
+            else
+            {
+                Console.Write("Данные некорректны или муха находится не на полу");
+            }
+        }
+        class XYZ
+        {
+            public double Xa;
+            public double Ya;
+            public double Za;
+            public double Xb;
+            public double Yb;
+            public double Zb;
+            public void onPlane()
+            {
+                double p = Math.Sqrt(Math.Pow(Xb - Xa, 2) + Math.Pow(Yb - Ya, 2));
+                Console.WriteLine("Путь по плоскости: " + Math.Round(p, 5));
+            }
+            public void inSpace()
+            {
+                double s = Math.Sqrt(Math.Pow(Xb - Xa, 2) + Math.Pow(Yb - Ya, 2) + Math.Pow(Zb - Za, 2));
+                Console.WriteLine("Расстояние между мухой и пауком по прямой линии: " + Math.Round(s, 5));
+            }
+
+
+        }
+
+    }
+}
