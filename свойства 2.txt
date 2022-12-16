@@ -1,0 +1,83 @@
+using System;
+using System.Xml.Linq;
+
+namespace _1
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Console.Write("Введите имя: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Введите возраст: ");
+            int age = int.Parse(Console.ReadLine());
+
+            Vasya Surprise  = new Vasya(name, age);
+            Surprise.Name = name;
+            Surprise.Age = age;
+            Surprise.RunMe();
+            Console.WriteLine(Surprise.Name);
+        }
+        class Vasya{
+            public string name;
+            public int age;
+            public string Name
+            {
+                get
+                {
+                    if (name != "Василий")
+                    {
+                        return name = ($"Я не {name}, а Василий!");
+                    }
+                    else return name;
+                }
+
+                set
+                {
+                    name = value;
+                }
+            }
+            public int Age {
+                get
+                {
+                    return age;
+                }
+
+                set
+                {
+                    if (age < 0)
+                    {
+                        age = 0;
+                    }
+                    if (age > 122)
+                    {
+                        age = 122;
+                    }
+                    else age = value;
+                }
+            }
+            public Vasya(string Name, int Age)
+            {
+                name = Name;
+                age = Age;
+            }
+            
+            public void RunMe()
+            {
+                if (age % 10 == 1 && age < 10 || age % 10 == 1 && age > 20)
+                {
+                    Console.WriteLine($"Мне {age} год");
+                }
+                else if (age % 10 == 2 && age > 20 || age % 10 == 3 && age < 10  || age % 10 == 4 && age < 10 || age % 10 == 3 && age > 20 || age % 10 == 2 && age < 10 || age % 10 == 4 && age > 20) {
+                    Console.WriteLine($"Мне {age} года");
+                }
+                else Console.WriteLine($"Мне {age} лет");
+            }
+                
+
+        }
+
+    }
+}
+
