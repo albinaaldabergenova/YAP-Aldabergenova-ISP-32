@@ -1,0 +1,42 @@
+using System;
+namespace _1
+{
+    class Program
+    {
+        static void Main()
+        {
+            Sequence first = new Sequence(40);
+            Console.WriteLine();
+            Sequence second = new Sequence(40, 60);
+            Console.WriteLine();
+            Sequence third = new Sequence('g');//выводит по таблице ASCII
+            Console.WriteLine();
+            Sequence fourth = new Sequence('g', 'p');//выводит по таблице ASCII
+        }
+        class Sequence
+        {
+            public Sequence(int end)
+            {
+                for (int i = 0; i <= end; i++) {
+                    Console.Write($"{i} ");
+                }
+            }
+            public Sequence(int start, int end) {
+                for (int i = start; i <= end; i++) {
+                    Console.Write($"{i} ");
+                }
+            }
+            public Sequence(char end) {
+                for (int i = 'a'; i <= end; i++) {
+                    Console.Write($"{i} ");
+                }
+            }
+            public Sequence(char start, char end) {
+                for (int i = start; i <= end; i++) {
+                    Console.Write($"{i} ");
+                }
+            }
+        }
+
+    }
+}

@@ -11,13 +11,34 @@ namespace _1
         }
         public static void GetList(int n)
         {
-            var nums = new List<int>();
+            
             Random randomizer = new Random();
-            for (int i = 0; i < n; i++)
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    nums.Add(randomizer.Next(0, 999));
+            //}
+            //Console.WriteLine(string.Join(", ", nums));
+            int a = randomizer.Next(1, 3);
+            switch (a)
             {
-                nums.Add(randomizer.Next(0, 999));
+                case 1:
+                    var numsInt = new List<int>();
+                    for (int i = 0; i < n; i++)
+                    {
+                        numsInt.Add(randomizer.Next(-999, 999));
+                    }
+                    Console.WriteLine(string.Join("\t", numsInt));
+                    break;
+                 case 2:
+                    var numsDouble = new List<double>();
+                    for (int i = 0; i < n; i++)
+                    {
+                        numsDouble.Add(randomizer.Next(-4000, 7000) * 0.01);
+                    }
+                    Console.WriteLine(string.Join("\t", numsDouble));
+                    break;
             }
-            Console.WriteLine(string.Join(", ", nums));
 
         }
 
